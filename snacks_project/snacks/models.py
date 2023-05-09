@@ -11,3 +11,13 @@ class Snack(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Posts(models.Model):
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    body = models.TextField()
+
+    def __str__(self):
+        return self.title
+
